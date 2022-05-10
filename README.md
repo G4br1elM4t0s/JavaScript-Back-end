@@ -1,2 +1,2 @@
-# CursoWeb
-Curso de Web Moderno
+# JavaScript
+Criando raizes para futuramente desenvolver aplicativos nativos com react!!!
