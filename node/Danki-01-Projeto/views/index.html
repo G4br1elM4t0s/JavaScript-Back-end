@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="times">
+        <form method="post">
+            <input type="text" name="time" placeholder="Insira o nome do seu time">
+            <input type="submit" value="inserir" name="acao">
+        </form>
+
         <%for(let i = 0;i < timesList.length ;i++){%>
 
             <p><%= timesList[i] %> | <a href="/deletar/<%=i%>">x</a></p>
