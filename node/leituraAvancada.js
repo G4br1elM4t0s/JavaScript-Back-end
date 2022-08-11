@@ -1,12 +1,26 @@
 const fs = require('fs');
-const read = require('readline')
 
-fs.readFile('teste.txt',(err,data)=>{
-    let str = data.toString();
 
-    // let newStr = str.split('/');
+fs.unlink('Gabrellindo.txt',(err,data)=>{
+    
+    console.log('Arquivo deletado com sucesso');
 
-    let newStr = str.substr(1,3)
+})
 
-    console.log(newStr);
+fs.writeFile('testea.txt','oioi testando?',(err,data)=>{
+    
+    console.log('Arquivo criado com sucesso');
+});
+
+fs.rename('testea.txt','Gabriellindo.txt',(err,data)=>{
+    console.log('arquivo renomeado confira o seu conteudo logo abaixo');   
+    
+})
+
+fs.readFile('Gabriellindo.txt',(err,data)=>{
+    
+    console.log('lendo o novo arquivo');
+    let leitor = data.toString();
+    console.log(leitor);
+    
 })
