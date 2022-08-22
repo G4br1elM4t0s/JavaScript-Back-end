@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form>
+            <label>Digite os numeros</label>
+            <input type="text" id="numeros" placeholder="digite alguns numeros seguidos por uma virgula">
+            <button onclick="enviarNums()">Enviar</button>
+        </form>
+        <script>
+            function enviarNums() {
+                var numeros = document.getElementById("numeros").value;
+                var h1 = document.getElementsByTagName('h1');
+
+                const num = numeros.split(",").map((nums)=> nums.trim());
+
+                alert(num.sort((a,b)=>{
+                    return a - b
+                }));
+                
+            }
+           
+        </script>
+
+</body>
+</html>
