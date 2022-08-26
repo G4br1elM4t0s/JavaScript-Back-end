@@ -145,6 +145,7 @@ section.outras-noticias h2{
     width: 60%;
     padding: 0 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -223,6 +224,7 @@ section.outras-noticias h2{
     text-align: left;
     display: flex;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .mais-lida-noticia-single img{
@@ -264,9 +266,20 @@ section.outras-noticias h2{
     .logo,.form-busca{width: 100%;}
     .form-busca{
         text-align: center;
+        margin-top: 10px;
     }
-    .title-destaque-descricao{
+    .title-destaque-descricao h2{
         font-size: 34px;
         margin: 20px 0;
+    }
+
+    .mais-lidas, .ultimas{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .box-ultima-single{
+        width: 100%;
+        margin-right: 0;
     }
 }
