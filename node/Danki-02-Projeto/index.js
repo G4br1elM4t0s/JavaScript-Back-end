@@ -10,15 +10,15 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+// sempre irá olhar para arquivos html
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.set('views',path.join(__dirname, '/pages'));
+app.set('views',path.join(__dirname, '/pages'));//dentro da pasta pages...
 
 
 app.get('/',(req, res)=>{
-
+    // organizando minha rota statica 
     if(req.query.busca == null){
         res.render('home',{})
     }
