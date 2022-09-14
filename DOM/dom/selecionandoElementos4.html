@@ -22,8 +22,32 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
-    </script>
+        function log(){
+            console.log(this);
+        }
+
+        HTMLCollection.prototype.log=log
+        HTMLElement.prototype.log=log    
+        NodeList.prototype.log = log 
+        Node.prototype.log = log
+        
+        const list = document.querySelector('div ul')
+        list.parentNode.log()
+        list.childNodes.log()
+
+        const primary = list.firstChild
+        primary.log()
+        primary.nextSibling.log()//fist element of the first element ou seja priemiro elemento do primeiro elemento!
+
+        const last = list.lastChild
+        last.log()
+        last.previousSibling.log() // last element of the list ou seja ultimo elemento da lista!
+
+        list.children.log();
+        list.firstElementChild.log() 
+        list.lastElementChild.log()
+        list.parentNode.previousElementSibling.log()
+        </script>
 </body>
 
 </html>
