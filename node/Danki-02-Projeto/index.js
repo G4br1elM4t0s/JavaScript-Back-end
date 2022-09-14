@@ -1,15 +1,33 @@
 const express = require('express');
-const { values } = require('lodash');
-const path = require('path')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const path = require('path');
 
 const app = express();
 
-var bodyParser = require('body-parser')
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+const user = "Gabriel";
+const pass = "bababa10";
+
+
+//conexão com o banco de dado
+mongoose.connect(`mongodb+srv://${user}:${pass}@cluster0.3luw0ba.mongodb.net/MTask?retryWrites=true&w=majority`, {
+  useNewUrlParser:true,
+  useUnifiedTopology:true,
+}).then(()=>{
+    console.log('conectado com sucesso');
+}).catch((err)=>{
+    console.log(err.message);
+})
+
+
+
 // sempre irá olhar para arquivos html
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -23,16 +41,15 @@ app.get('/',(req, res)=>{
         res.render('home',{})
     }
     else{
-        res.send('Você buscou: ' + req.query.busca)
+        //pagina de busca
+        res.render('busca',{});
     }
-})
+});
 
-app.get('/:slug',(req, res)=>{
-    
-    res.send(req.params.slug);
-
-})
+app.get('/:slug', (req,res)=>{
+    res.render('single',{});
+});
 
 app.listen(5100, ()=>{
     console.log('Servidor esta rodando!');
-})
+});

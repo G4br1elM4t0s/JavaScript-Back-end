@@ -13,4 +13,4 @@ console.log('Escola'.concat(escola.concat("!")));
 
 console.log(escola.replace(3, 'e'));// troca 
 
-console.log('Gabriel,João,Rafael'.split(','))
+console.log('Gabriel,João,Rafael'.split(','));

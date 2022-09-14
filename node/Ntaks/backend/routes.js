@@ -1,12 +1,12 @@
 const express= require('express');
 
-const routes = express.Router();
+const router = express.Router();
 
-routes.get('/',(req, res)=>{
-    res.json({status: "Ntask API"});
 
-});
+const SessionController = require('./src/controllers/SessionController');
 
-require('./src/controllers/TasksControllers')(routes);
+router.post("/sessions", SessionController.store);
 
-module.exports = app => app.use(routes);
+
+
+module.exports = app => app.use(router);
