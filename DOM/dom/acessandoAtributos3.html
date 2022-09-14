@@ -16,7 +16,26 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+        //consigo acessar os valores de atributos personalizados porem não conseguimos 
+        //alterar o conteudo
+        //Somente leitura
+
+        //abaixo esta a forma de acessar pelo o indice ou pela notação ponto
+        console.log(lista.attributes);
+        console.log(lista.attributes[0]);
+        console.log(lista.attributes.id);
+        console.log(lista.attributes[1]);
+        console.log(lista.attributes.destino)
+        console.log(lista.attributes[2]);
+        console.log(lista.attribute['data-urgencia']);// temos que passar por um cochetes fazendo 
+        //um destructuring, pois no javascript o menos nesse caso é considerado como
+        //uma operação de subtração
+
+        //abaixo tem um exemplo... o atrbuto abaixo no console.log esta sendo alterado
+        //porém no que a gente que realmente alterar mão conseguimos que no caso é a DOM
+        // lista.attribute.destino ="Esquina"//foi a primeira coisa que veio a minha cabeça
+        // console.log(lista.attributes.destino);
     </script>
 </body>
 
