@@ -10,7 +10,32 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        //O querySelector(espera um seletor css ou seja '#'ou'.')
+        document.querySelector('#primeiro').classList.add('destaque');
+
+        const selecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(e=>e.classList.add('destaque'));
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e=>e.classList.remove('destaque'));
+
+        selecionar('div')
+
+        deselecionar('*')
+        selecionar('.terceiro.ultimo');
+
+        deselecionar('*')
+        selecionar(':not(#primeiro)'); // ":not"um operador de negação
+
+        deselecionar('*')
+        selecionar(':nth-child(1)') //pseudo classe que que é referente ao primeiro filho de algum elemento!
+
+
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)') //pseudo classe que irá selecionar um elemento de um tipo que eu irei passar!
+        
+        deselecionar('*')
+        selecionar('[wb-attrib]')
+
+    
     </script>
 </body>
 </html>
