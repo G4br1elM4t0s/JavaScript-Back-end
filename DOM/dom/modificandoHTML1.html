@@ -8,8 +8,38 @@
 </head>
 
 <body class='conteudo exercicio'>
-    <script>
-        // ...
+    <script>  
+        const body = document.querySelector('body');
+
+        const div1 = document.createElement('div');//Cria um elemento html do tipo div 
+
+        div1.classList.add('destaque');//adiciona uma classe no elemento criado no javascript
+        div1.innerHTML = 'Primeiro';
+
+        const div2 = document.createElement('div');
+        div2.setAttribute('wm-atributo', 'valor'); //Adiciona um novo atributo
+        //ou modificao valor de um atributo existente num elemento específico.
+        div2.innerHTML = 'Segundo';
+
+        const p = document.createElement('p');  
+        p.innerHTML = 'Terceiro';
+        const div3 = document.createElement('div');
+        div3.appendChild(p) //insere um elemento dentro da div; No linguajar tecnico ele insere
+        //um novo nó na estrutura do DOM de um documento e na inserção ele adiciona na ultima posição!
+
+
+        body.appendChild(div1);
+        body.appendChild(div2);
+        body.appendChild(div3);
+
+        const texto = document.createTextNode('Antes do elemento...');
+        div3.insertBefore(texto,div3.childNodes[0]);// no casos o insertBefore pega o elemento passado como primeiro
+        //parâmetro, e insere ele após o elemento passado ou seja ele pega o div3
+        //E coloca o texto... antes do elemento contido na posição '0'
+
+        //clonando elementos no HTML
+        const div4 = div3.cloneNode(true);
+        
     </script>
 </body>
 
