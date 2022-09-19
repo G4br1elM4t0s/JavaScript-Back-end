@@ -9,9 +9,28 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a espera-um-pouco href="https://google.com.br">Google</a> 
+        <!-- onclick="navegarEm5s(event)" Forma implicita que não é muito utilizada--> 
+        <!-- Obrigação passar o 'event' -->
     </div>
     <script>
-        // ...
+        // Padrão observer é o padrão mais utilizado na Web.
+        
+        //interceptar o click
+        function navegarEm5s(e){
+            e.preventDefault(); //impede que o evento padrção ocorra Ex seguir um link;
+            console.log("Saindo em 5s...");
+            
+            setTimeout(()=>{
+                const link = e.target;
+                window.location.href = link.href
+            },5000)
+        }
+
+        // const a =  document.querySelector('a');
+        // a.onclick = navegarEm5s;
+
+        const a = document.querySelector('[espera-um-pouco]');
+        a.onclick =navegarEm5s
     </script>
 </body>
