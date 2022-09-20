@@ -31,6 +31,17 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        const submit = document.querySelector('[wm-submit]');
+        submit.onclick = function(e){
+            e.preventDefault();
+            const form = e.target.parentNode
+            const formData = new FormData(form); // Objetivo pegar o parentNode deste botão
+            //ou seja o formulario será interceptado
+            formData.append('ajax', true);
+            console.log(formData.get('q'));
+            console.log(formData.get('hl'));
+
+
+        }
     </script>
 </body>
