@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -7,30 +7,43 @@
   src: url('../fonts/Pixel.ttf');
 }
 
-[wm-flappy]{
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0D262D;
+  color: #fff;
+  height: 100%;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  font-family: Pixel;
+  font-size: 20px;
+}
+
+[wm-flappy] {
   position: relative;
   border: 5px solid dodgerblue;
-  height: 700px;
+  height: 500px;
   width: 1200px;
   margin: 15px;
   background-color: deepskyblue;
-  overflow: hidden; /* overflow: corta tudo que estará saindo da div; */
-  
+  overflow: hidden;
 }
 
 .passaro {
   position: absolute;
-  background-image: url('../imgs/passaro.png');
   width: 60px;
-  height: 60px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   left: calc(50% - 30px);
-  bottom: 50%;
 }
 
-.par-de-barreiras{
+.par-de-barreiras {
   position: absolute;
   top: 0;
   height: 100%;
@@ -39,31 +52,50 @@
   justify-content: space-between;
 }
 
-.barreira{
+.barreira {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.barreira .borda{
+.barreira .borda {
   height: 30px;
   width: 130px;
-  background: linear-gradient(90deg,#639301,#A5E82E);
-  border:2px solid black;
+  background: linear-gradient(90deg, #639301, #A5E82E);
+  border: 2px solid #000;
 }
 
-.barreira .corpo{
+.barreira .corpo {
   height: 150px;
   width: 110px;
-  background: linear-gradient(90deg,#639301,#A5E82E);
+  background: linear-gradient(90deg, #639301, #A5E82E);
   border-left: 2px solid #000;
   border-right: 2px solid #000;
 }
 
-.progresso{
+.progresso {
   position: absolute;
   top: 10px;
   right: 10px;
   font-family: Pixel;
   font-size: 70px;
+  z-index: 100;
+}
+
+.game-over {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 280px);
+  font-family: Pixel;
+  font-size: 150px;
+  z-index: 100;
+}
+
+.restart {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 180px);
+  font-family: Pixel;
+  font-size: 50px;
+  z-index: 100;
 }

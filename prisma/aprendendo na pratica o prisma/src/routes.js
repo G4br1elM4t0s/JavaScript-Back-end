@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 const router = Router();
 
-router.post("register", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
