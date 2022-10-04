@@ -3,9 +3,9 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const router = Router();
+const routes = Router();
 
-router.post("/register", async (req, res) => {
+routes.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -33,4 +33,4 @@ router.post("/register", async (req, res) => {
   }
 });
 
-export { router };
+export default routes;
